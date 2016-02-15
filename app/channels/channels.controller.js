@@ -10,6 +10,7 @@
 
       vm.getDisplayName = Users.getDisplayName;
       vm.getGravatar = Users.getGravatar;
+      vm.users = Users.all;
       vm.newChannel = {
         name: ''
       };
