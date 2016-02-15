@@ -17,7 +17,7 @@
 
 			<div class="list-head">Messages</div>
 			<div class="channel" ng-repeat="user in vm.users">
-				<a ng-if="user.$id !== vm.profile.$id" ui-sref="channels.direct({uid: user.$id})" ui-sref-active="selected"># {{ user.displayName }}</a>
+				<a ng-if="user.$id !== vm.profile.$id" ui-sref="channels.direct({uid: user.$id})" ui-sref-active="selected">@ {{ user.displayName }}</a>
 			</div>
 		</div>
 
