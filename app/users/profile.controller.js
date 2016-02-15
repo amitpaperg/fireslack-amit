@@ -9,7 +9,9 @@
 
       vm.updateProfile = function(){
         vm.profile.emailHash = md5.createHash(auth.password.email);
-        vm.profile.$save();
+        vm.profile.$save().then(function(){
+          $state.go('channels');
+        });
       };
     });
 
