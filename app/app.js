@@ -93,7 +93,7 @@
                   if(profile.displayName) {
                     return profile;
                   } else {
-                    $state.go('home');
+                    $state.go('profile');
                   }
                 });
               }, function(error){
