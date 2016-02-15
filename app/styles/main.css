@@ -139,7 +139,8 @@ body {
 }
 
 .sidebar .presence.online {
-  background: #99d04a;
+  background: #009688;
+  border: 1px solid #FFEB3B;
 }
 
 .message-pane {

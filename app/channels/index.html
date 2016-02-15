@@ -17,7 +17,10 @@
 
 			<div class="list-head">Messages</div>
 			<div class="channel" ng-repeat="user in vm.users">
-				<a ng-if="user.$id !== vm.profile.$id" ui-sref="channels.direct({uid: user.$id})" ui-sref-active="selected">@ {{ user.displayName }}</a>
+				<a ng-if="user.$id !== vm.profile.$id" ui-sref="channels.direct({uid: user.$id})" ui-sref-active="selected">
+				<span class="presence" ng-class="{ online: user.online }"></span>
+				{{ user.displayName }}
+				</a>
 			</div>
 		</div>
 
@@ -25,6 +28,7 @@
 			<img class="user-pic" ng-src="{{ vm.getGravatar(vm.profile.$id) }}" />
 			<div class="user-info">
 				<div class="user-name">
+					<span class="presence" ng-class="{ online: vm.profile.online }"></span>
 					{{ vm.profile.displayName}}
 				</div>
 

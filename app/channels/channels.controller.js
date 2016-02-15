@@ -10,14 +10,18 @@
 
       vm.getDisplayName = Users.getDisplayName;
       vm.getGravatar = Users.getGravatar;
+      Users.setOnline(profile.$id);
       vm.users = Users.all;
       vm.newChannel = {
         name: ''
       };
 
       vm.logout = function(){
-        Auth.$unauth();
-        $state.go('home');
+        vm.profile.online = null;
+        vm.profile.$save().then(function(){
+          Auth.$unauth();
+          $state.go('home');
+        });
       };
 
       vm.createChannel = function(){
